@@ -10,12 +10,12 @@
     </div>
   
    
-   <br><br>
-   <br><br>
-<div style="width:50%;float:left">
-  <div>
-    <img class="img-responsive center-block" src="/assets/step1logo.png" style="padding-top:24px">
-  </div>
+
+<div class="step_content">
+    <div class="left_half">
+      <div class="step_logo_image" ><img class="img-responsive" src="/assets/step1logo.png">
+      </div>
+  
   
 
 
@@ -46,45 +46,38 @@
     </ul>
 -->
 
-<br/><br/>
-    
+
      <%# @serving_styles.each do |f| %>
         <%#= collection_select(nil, :serving_style_id,  @serving_styles,  :id, :name, {:prompt   => "SELECT SERVING STYLE"}, {:id => 'ddc', :class => 'modifiedversionstep1'}) %>
     <%# end %>
 
-<br/>
 
 
 
 
 <%#= collection_select(nil, :tea_base_id, @tea_bases, :id, :name, {:prompt   => "SELECT BASE"}, {:id => 'ddc', :class => 'modifiedversionstep1'}) %>
-<br/>
 
-
-    <br><br/>
-    
-    <br/>
 
 <!-- This is the two dropdown which were implementing and working but second dropdow was not displaying the selected option-->
-<p>UL LI dropdowns are below </p>
 
 
 
-    <div class="dropdown tobeaddedtodropdown"  style="position: relative">
+    <div class="dropdown tobeaddedtodropdown" >
         <button class="btn btn-default dropdown-toggle tobeaddedtobutton" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">  
             SELECT SERVING STYLE
         </button>
         <span class="caret downarrow"></span>
         <ul class="dropdown-menu tobeaddedtoul" role="menu" aria-labelledby="dropdownMenu1">
             <% @serving_styles.each do |ss| %>
-                <li role="presentation" class="serving_styles_observer testli" value="<%= ss.id %>"><a role="menuitem" tabindex="-1" href="javascript:return false;"><%= ss.name %></a></li>
+                <li role="presentation" class="serving_styles_observer testli" value="<%= ss.id %>"><a role="menuitem" tabindex="-1" href="javascript:void(0);"><%= ss.name %></a></li>
             <% end %>
         </ul>
     </div>
         
+ 
     <div class="dropdown tobeaddedtodropdown"  style="position: relative;left: 78px;top:36px">
-        <button class="btn btn-default dropdown-toggle tobeaddedtobutton" type="button"  data-toggle="dropdown" aria-expanded="true">  
-            SELECT BASE
+        <button id="base_type_button" class="btn btn-default dropdown-toggle tobeaddedtobutton" type="button"  data-toggle="dropdown" aria-expanded="true">  
+ 
 
         </button>
         <span class="caret downarrow"></span>
@@ -92,16 +85,19 @@
         </ul>
     </div>  
 
+ 
 <br/><br/>
 
+<div id="tea_base_types">
+  
+</div>
 
+ 
 
-    <a href="/pages/step2"><img id="image1" class="img-responsive center-block"style="display:inline;position:relative;left:86px;width:131px" src="../assets/buttons/Nextbtn.png">
+    <a href="/pages/step2"><img id="image1" class="img-responsive center-block"style="display:inline;position:relative;left:110px;width:125px" src="../assets/buttons/Nextbtn.png">
   </a>
 </div>
-    <br><br/><br/>
-
-    <br><br/><br/>
+    <br>
 
 
 
@@ -154,7 +150,7 @@
 
 
 
-<div style="width:50%;float:left;top: 47px; position: relative;" >
+<div class="right_half" >
   <div id="LOOSE TEA" class="dropdownclasstest">
     <img class="img-responsive center-block " src="/assets/step1cupempty.png" style="padding-top:24px">
   </div>
@@ -186,23 +182,20 @@
 <script>
   $(document).ready(function() {
     $('.serving_styles_observer').click(function() {
-       alert($(this).val());
+        
       $.ajax({
         url: "<%= update_tea_bases_path %>",
         data: {
           serving_style_id : $(this).val()
-        },
-        dataType: "script"
+        } 
       });
     });
+  
+  
+  
+  
+  
   });
   
-  $(function() {
-  alert("testwala");
-        $('#dropdownMenu1').change(function(){  alert("testwala");
 
-            $('.dropdownclasstest').hide();
-            $('#' + $(this).val()).show();
-        });
-    });
 </script>

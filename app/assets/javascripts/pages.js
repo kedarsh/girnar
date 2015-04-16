@@ -8,16 +8,14 @@ $(window).load(function() {
   });  
 });
 
-function dynamic_event(){
-      alert("yu");
-      alert("Value"+$(this).html);
-      alert("Text"+$(this).attr('data-text'));
-     $(this).parents('.dropdown-menu').siblings('.btn').text($(this).text());
-     $(this).parents('.dropdown-menu').siblings('.btn').val($(this).text());
+function dynamic_event(tea_id,textvalue,buttonid){
+      $("#"+buttonid).text(textvalue);
+     //$(this).parents('.dropdown-menu').siblings('.btn').text(55);
+    
       $.ajax({
-        url: "<%= update_tea_base_types_path %>",
+        url: "/pages/update_tea_base_types",
         data: {
-          tea_base_id : $(this).value()
+          tea_base_id : tea_id
         },
         dataType: "script"
       });

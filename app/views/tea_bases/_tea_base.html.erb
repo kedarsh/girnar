@@ -1,3 +1,7 @@
-<li role="presentation" style="min-width: 240px" class="tea_bases_observer testli" value="<%= tea_base.id %>" onclick="dynamic_event()" data-text="<%= tea_base.name %>">
-    <a role="menuitem" tabindex="-1" href="javascript:return false;"><%= tea_base.name %></a>
+<li role="presentation" style="min-width: 240px" class="tea_bases_observer testli" value="<%= tea_base.id %>" onclick="dynamic_event('<%= tea_base.id %>','<%= tea_base.name %>','base_type_button')" data-text="<%= tea_base.name %>">
+    <a role="menuitem" tabindex="-1" href="javascript:void(0);"><%= tea_base.name %></a>
 </li>
+ 
+
+ 
+ 

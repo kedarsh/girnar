@@ -25,8 +25,10 @@ class PagesController < ApplicationController
  
   def update_tea_base_types
     # updates tbt based on teabase selected
-    tea_base = TeaBase.find(params[:teabase_id])
+    tea_base = TeaBase.find(params[:tea_base_id])
     @tea_base_types = tea_base.tea_base_types
+    
+    
   end
   
   

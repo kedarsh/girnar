@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  serving_style_id: 
+  base_id: 
+  flavour_id: 
+  packaging_id: 
+  label_id: 
+  blend_name: MyString
+  message: MyText
+  status: MyString
+
+two:
+  user_id: 
+  serving_style_id: 
+  base_id: 
+  flavour_id: 
+  packaging_id: 
+  label_id: 
+  blend_name: MyString
+  message: MyText
+  status: MyString

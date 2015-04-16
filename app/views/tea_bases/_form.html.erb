@@ -1,0 +1,41 @@
+<%= form_for(@tea_bases) do |f| %>
+  <% if @tea_bases.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tea_bases.errors.count, "error") %> prohibited this tea_bases from being saved:</h2>
+
+      <ul>
+      <% @tea_bases.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :info %><br>
+    <%= f.text_area :info %>
+  </div>
+  <div class="field">
+    <%= f.label :no_of_flavours %><br>
+    <%= f.number_field :no_of_flavours %>
+  </div>
+  <div class="field">
+    <%= f.label :serving_style_id %><br>
+    <%= f.text_field :serving_style_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

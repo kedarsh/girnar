@@ -1,0 +1,208 @@
+
+<!--Below is the Image of steps-->
+    <div class="row text-center steps_row">
+        <div class="col-md-2 "><img class="img-responsive center-block" src="/assets/1mainh.png" style="padding-top:0px"><br><p class="image-caption"style="font-size:11px">SELECT A</br>BASE</p></div>
+        <div class="col-md-2 "><img class="img-responsive center-block" src="/assets/2nh2.png" style="padding-top:17px"><br><p class="image-caption-dark">SELECT<br>FLAVOURS</p></div>
+        <div class="col-md-2 "><img class="img-responsive center-block" src="/assets/3nh2.png" style="padding-top:17px"><br><p class="image-caption-dark">CHOOSE YOUR <br>OWN LABEL</p></div>
+        <div class="col-md-2"><img class="img-responsive center-block" src="/assets/4nh2.png" style="padding-top:14px"><br><p class="image-caption-dark">SELECT <br>PACKAGING</p></div>
+        <div class="col-md-2"><img class="img-responsive center-block" src="/assets/5nh.png" style="padding-top:16px"><br><p class="image-caption-dark">WRITE A <br>MESSAGE</p></div>
+        <div class="col-md-2"><img class="img-responsive center-block" src="/assets/6nh.png" style="padding-top:17px"><br><p class="image-caption-dark">SHIPPING</p></div>
+    </div>
+  
+   
+   <br><br>
+   <br><br>
+<div style="width:50%;float:left">
+  <div>
+    <img class="img-responsive center-block" src="/assets/step1logo.png" style="padding-top:24px">
+  </div>
+  
+
+
+
+  
+  
+  
+<!--<div class="btn-group"  id="ddc" style="position: relative;left: 78px;top:36px">
+    <button class="btn btn-default dropdown-toggle modifiedversionstep1" name="sb" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    SELECT BASE
+<!-- <span class="caret downarrow"></span>
+    </button>-->
+      <%# @serving_styles.each do |s| %>
+      <%# s.tea_bases.each do |tb| %>
+      <!--      <div class = "<%#= s.name %>">
+                <div class= "tea_base_<%#= tb.name %>"><%#= tb.name %></div>
+                <%# tb.tea_base_types.each do |tbt| %>
+                    <%#= tbt.name %>
+                <#% end %>
+            </div>
+        <#% end %>
+    <#% end %>
+  
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+      <#% @tea_bases.each do |tb| %>
+        <li role="presentation" style="min-width: 240px"><a role="menuitem" tabindex="-1" href="#"><#%= tb.name %></a></li>
+      <#% end %>
+    </ul>
+-->
+
+<br/><br/>
+    
+     <%# @serving_styles.each do |f| %>
+        <%#= collection_select(nil, :serving_style_id,  @serving_styles,  :id, :name, {:prompt   => "SELECT SERVING STYLE"}, {:id => 'ddc', :class => 'modifiedversionstep1'}) %>
+    <%# end %>
+
+<br/>
+
+
+
+
+<%#= collection_select(nil, :tea_base_id, @tea_bases, :id, :name, {:prompt   => "SELECT BASE"}, {:id => 'ddc', :class => 'modifiedversionstep1'}) %>
+<br/>
+
+
+    <br><br/>
+    
+    <br/>
+
+<!-- This is the two dropdown which were implementing and working but second dropdow was not displaying the selected option-->
+<p>UL LI dropdowns are below </p>
+
+
+
+    <div class="dropdown tobeaddedtodropdown"  style="position: relative">
+        <button class="btn btn-default dropdown-toggle tobeaddedtobutton" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">  
+            SELECT SERVING STYLE
+        </button>
+        <span class="caret downarrow"></span>
+        <ul class="dropdown-menu tobeaddedtoul" role="menu" aria-labelledby="dropdownMenu1">
+            <% @serving_styles.each do |ss| %>
+                <li role="presentation" class="serving_styles_observer testli" value="<%= ss.id %>"><a role="menuitem" tabindex="-1" href="javascript:return false;"><%= ss.name %></a></li>
+            <% end %>
+        </ul>
+    </div>
+        
+    <div class="dropdown tobeaddedtodropdown"  style="position: relative;left: 78px;top:36px">
+        <button class="btn btn-default dropdown-toggle tobeaddedtobutton" type="button"  data-toggle="dropdown" aria-expanded="true">  
+            SELECT BASE
+
+        </button>
+        <span class="caret downarrow"></span>
+        <ul class="dropdown-menu tobeaddedtoul" role="menu" aria-labelledby="dropdownMenu1" id="tea_bases_ul">
+        </ul>
+    </div>  
+
+<br/><br/>
+
+
+
+    <a href="/pages/step2"><img id="image1" class="img-responsive center-block"style="display:inline;position:relative;left:86px;width:131px" src="../assets/buttons/Nextbtn.png">
+  </a>
+</div>
+    <br><br/><br/>
+
+    <br><br/><br/>
+
+
+
+
+
+
+
+
+
+
+<!-- This is another approach for dropdowns
+<%#= form_tag pages_path, {:method => :get, :class => "users_search_form"} do %>
+      <%#= select_tag :serving_style_id, options_from_collection_for_select(ServingStyle.all, "id", "name"), :prompt => "SELECT SERVING STYLE" %>
+      <%#= select_tag :tea_base_id, options_from_collection_for_select(TeaBase.all, "id", "name"),
+                     "data-option-dependent" => true,
+                     "data-option-observed" => "serving_style_id",
+                     "data-option-url" => "/serving_styles/:serving_style_id:/tea_bases.json",
+                     "data-option-key-method" => :id,
+                     "data-option-value-method" => :name %>
+      <br/>
+      <#%= submit_tag "Cerca" %>
+  <#% end %>
+  -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+<!--<div class="col-md-6"><img class="img-responsive center-block" src="/assets/step1cupempty.png" style="padding-top:24px"></div>-->
+
+
+
+<div style="width:50%;float:left;top: 47px; position: relative;" >
+  <div id="LOOSE TEA" class="dropdownclasstest">
+    <img class="img-responsive center-block " src="/assets/step1cupempty.png" style="padding-top:24px">
+  </div>
+  <div>
+    <img id="image" class="img-responsive center-block" src="/assets/step1description.png" style="width: 273px;padding-right: 27px;">
+    <p id="text">1 MORE STEP TO SEE THE PRICE</p>
+  </div>
+    <br><br><br><br> <br><br>
+</div>
+
+
+
+
+
+
+
+  
+    
+<%#= button_to "REORDER", '/orders/new', {:class => "buttonTo"} %>
+
+<%#= f.grouped_collection_select :tea_base_id, TeaBase.order(:name), :tea_bases, :name, :id, :name, include_blank: true %>
+
+
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+     
+<script>
+  $(document).ready(function() {
+    $('.serving_styles_observer').click(function() {
+       alert($(this).val());
+      $.ajax({
+        url: "<%= update_tea_bases_path %>",
+        data: {
+          serving_style_id : $(this).val()
+        },
+        dataType: "script"
+      });
+    });
+  });
+  
+  $(function() {
+  alert("testwala");
+        $('#dropdownMenu1').change(function(){  alert("testwala");
+
+            $('.dropdownclasstest').hide();
+            $('#' + $(this).val()).show();
+        });
+    });
+</script>

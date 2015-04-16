@@ -1,0 +1,147 @@
+
+    <div class="row text-center steps_row">
+  <!--Below is the Image of steps-->
+   <div class="col-md-2 "><img class="img-responsive center-block" src="/assets/1nh.png" style="padding-top:0px"><br><p class="image-caption-dark">SELECT A</br>BASE</p></div>
+   <div class="col-md-2 "><img class="img-responsive center-block" src="/assets/2mainh2.png" style="padding-top:16px"><br><p class="image-caption">SELECT<br>FLAVOURS</p></div>
+   <div class="col-md-2 "><img class="img-responsive center-block" src="/assets/3nh2.png" style="padding-top:16px"><br><p class="image-caption-dark">CHOOSE YOUR <br>OWN LABEL</p></div>
+   <div class="col-md-2"><img class="img-responsive center-block" src="/assets/4nh2.png" style="padding-top:12px"><br><p class="image-caption-dark">SELECT <br>PACKAGING</p></div>
+   <div class="col-md-2"><img class="img-responsive center-block" src="/assets/5nh.png" style="padding-top:15px"><br><p class="image-caption-dark">WRITE A <br>MESSAGE</p></div>
+   <div class="col-md-2"><img class="img-responsive center-block" src="/assets/6nh.png" style="padding-top:16px"><br><p class="image-caption-dark">SHIPPING</p></div>
+
+   <!-- <div class="span4"></div>-->
+  </div>
+
+   
+   <br><br>
+   <br><br>
+  
+  
+<div style="width:50%;float:left">
+    <div>
+        <img class="img-responsive center-block" src="/assets/step2logo.png" style="padding-top:24px;width:275px">
+        <p class="step2LogoDescription">You may select upto two flavours (optional) to make your perfect blend.</p> <br>
+    </div>
+            <%#= collection_select(nil, :flavour_id,  @flavours,  :id, :name, {:prompt   => "SELECT FLAVOUR 1"}, {:id => 'ddc', :class => 'modifiedversionstep2', :style => 'position: relative;left: 67px;top:10px'}) %>
+            <%#= collection_select(nil, :flavour_id,  @flavours,  :id, :name, {:prompt   => "SELECT FLAVOUR 2"}, {:id => 'ddc', :class => 'modifiedversionstep2', :style => 'position: relative;left: 67px;top:10px'}) %>
+
+
+    <div class="dropdown tobeaddedtodropdown2"  style="position: relative">
+        <button class="btn btn-default dropdown-toggle tobeaddedtobutton2" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">  
+            SELECT FLAVOUR 1
+        </button>
+        <span class="caret downarrow"></span>
+        <ul class="dropdown-menu tobeaddedtoul2" role="menu" aria-labelledby="dropdownMenu1">
+            <% @flavours.each do |f| %>
+                <li id="testli2" role="presentation" class="flavours_observer" value="<%= f.id %>"><a role="menuitem" tabindex="-1" href="javascript:return false;"><%= f.name %></a></li>
+            <% end %>
+        </ul>
+    </div>
+    
+    
+    
+    
+    <div class="dropdown tobeaddedtodropdown2"  style="position: relative;left: 78px;top:36px;  margin-bottom: 50px">
+        <button class="btn btn-default dropdown-toggle tobeaddedtobutton2" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">  
+            SELECT FLAVOUR 2
+
+        </button>
+        <span class="caret downarrow"></span>
+        <ul class="dropdown-menu tobeaddedtoul2" role="menu" aria-labelledby="dropdownMenu1" id="flavours_ul">
+        </ul>
+    </div>
+    
+    
+    <a href="/pages/step3"><img id="image1" class="img-responsive center-block"style="display:inline;position:relative;left:86px;width:131px" src="../assets/buttons/Nextbtn.png">
+    </a>
+<!--<div class="col-md-6"><img class="img-responsive center-block" src="/assets/step1cupempty.png" style="padding-top:24px"></div>-->
+</div>
+
+
+  <div style="width:50%;float:left;top: 47px; position: relative;" >
+      <div>
+          <img class="img-responsive center-block" src="/assets/step1cupempty.png" style="padding-top:24px">
+      </div>
+      <div>
+          <img id="image" class="img-responsive center-block" src="/assets/step1description.png" style="width: 273px;padding-right: 27px;">
+            
+      </div>
+<br><br><br><br> <br><br><br><br>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!--<div style="width:50%;float:left">
+<div class="col-md-6"><img class="img-responsive center-block" src="/assets/step2logo.png" style="padding-top:24px"><p class="step2LogoDescription">You may select upto two flavours (optional) to make your perfect blend.</p></div>
+
+<div class="col-md-6"><img class="img-responsive center-block" src="/assets/step1cupempty.png" style="padding-top:24px"></div>
+</div>
+<img id="image" class="img-responsive center-block" style="padding-left:370px;width:600px" src="/assets/step1description.png"><p id="text">1 MORE STEP TO SEE THE PRICE</p>
+
+    <#%= button_to "REORDER", '/orders/new', {:class => "buttonTo"} %>
+ 
+<br><br><br><br>
+
+
+
+
+-->
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <!--<script src="js/bootstrap.js"></script>-->
+<script>
+  $(document).ready(function() {
+    $('.flavours_observer').click(function() {
+       alert($(this).val());
+      $.ajax({
+        url: "<%= update_flavours_path %>",
+        data: {
+          flavour_id : $(this).val()
+        },
+        dataType: "script"
+      });
+    });
+  });
+  
+  $(function() {
+  alert("testwala");
+        $('#dropdownMenu1').change(function(){  alert("testwala");
+
+            $('.dropdownclasstest').hide();
+            $('#' + $(this).val()).show();
+        });
+    });
+</script>

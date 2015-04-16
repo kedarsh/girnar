@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>MySignatureCup - Girnar</title>
+
+
+ <!--<link rel="stylesheet" type="text/css" href="msc/app/assets/stylesheets/newstyle.css">-->
+
+
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ <%= csrf_meta_tags %>
+</head>
+
+<body>
+ <p></p> 
+<div class="container maindiv">    
+    <img class="img-responsive book" src="/assets/book1.png">
+    <img class="img-responsive cup" src="/assets/cup8.png">
+   <div class="black_bg">
+
+
+    <%= render 'layouts/header' %>
+
+   
+
+    <%= yield %>
+    
+    <%= render 'layouts/footer' %>
+ 
+  </div> <!--black_bg-->
+</div>
+ <br/><br/> <br/><br/>
+</body>
+</html>

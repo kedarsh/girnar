@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @flavour.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @flavour.description %>
+</p>
+
+<%= link_to 'Edit', edit_flavour_path(@flavour) %> |
+<%= link_to 'Back', flavours_path %>

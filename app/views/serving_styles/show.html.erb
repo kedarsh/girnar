@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @serving_style.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @serving_style.description %>
+</p>
+
+<%= link_to 'Edit', edit_serving_style_path(@serving_style) %> |
+<%= link_to 'Back', serving_styles_path %>

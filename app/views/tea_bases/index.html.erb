@@ -1,0 +1,35 @@
+<h1>Listing tea_bases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Info</th>
+      <th>No of flavours</th>
+      <th>Serving style</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tea_bases.each do |tea_bases| %>
+      <tr>
+        <td><%= tea_bases.name %></td>
+        <td><%= tea_bases.price %></td>
+        <td><%= tea_bases.description %></td>
+        <td><%= tea_bases.info %></td>
+        <td><%= tea_bases.no_of_flavours %></td>
+        <td><%= tea_bases.serving_style %></td>
+        <td><%= link_to 'Show', tea_bases %></td>
+        <td><%= link_to 'Edit', edit_tea_bases_path(tea_bases) %></td>
+        <td><%= link_to 'Destroy', tea_bases, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tea base', new_tea_bases_path %>

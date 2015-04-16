@@ -1,0 +1,90 @@
+    <div class="row text-center steps_row">
+  <!--Below is the Image of steps-->
+   <div class="col-md-2 "><img class="img-responsive center-block" src="/assets/1nh.png" style="padding-top:0px"><br><p class="image-caption-dark">SELECT A</br>BASE</p></div>
+   <div class="col-md-2 "><img class="img-responsive center-block" src="/assets/2nh2.png" style="padding-top:17px"><br><p class="image-caption-dark">SELECT<br>FLAVOURS</p></div>
+   <div class="col-md-2 "><img class="img-responsive center-block" src="/assets/3nh2.png" style="padding-top:17px"><br><p class="image-caption-dark">SELECT <br>PACKAGING</p></div>
+   <div class="col-md-2"><img class="img-responsive center-block" src="/assets/4mainh2.png" style="padding-top:12px"><br><p class="image-caption">CHOOSE YOUR <br>OWN LABEL</p></div>
+   <div class="col-md-2"><img class="img-responsive center-block" src="/assets/5nh.png" style="padding-top:15px"><br><p class="image-caption-dark">WRITE A <br>MESSAGE</p></div>
+   <div class="col-md-2"><img class="img-responsive center-block" src="/assets/6nh.png" style="padding-top:15px"><br><p class="image-caption-dark">SHIPPING</p></div>
+
+   <!-- <div class="span4"></div>-->
+  <br><br>
+   <br><br>
+  </div>
+
+   
+   <br><br>
+   <br><br>
+  <div style="width:50%;float:left">
+      <div><img class="img-responsive center-block" src="/assets/step3logo.png" style="padding-top:24px;width:275px"></div>
+      <div class="dropdown" id="ddcstep3" style="position: relative;left: 65px;top:10px">
+  <button class="btn btn-default dropdown-toggle modifiedversionstep3" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+SELECT A THEME
+   <!-- <span class="caret downarrow"></span>-->
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <% @themes.each do |t| %>
+      <li role="presentation" style="min-width: 240px"><a role="menuitem" tabindex="-1" href="#"><%= t.name %></a></li>
+    <% end %>
+  </ul>
+</div>
+  <br><br>
+  </div>
+<!--<div class="col-md-6"><img class="img-responsive center-block" src="/assets/step1cupempty.png" style="padding-top:24px"></div>
+
+<img id="image" class="img-responsive center-block" style="padding-left:370px;width:600px" src="/assets/step1description.png"><p id="text">1 MORE STEP TO SEE THE PRICE</p>-->
+
+<!--<div style="clear:both">
+    <#% @labels.each do |l| %>
+      <#%= image_tag(l.photo_url) if l.photo? %>
+      <#%= l.name %>
+    <#% end %>
+
+-->
+  <div class="row" style="position:relative;left:53px;top:20px;clear:both">
+    <form>
+      <% @labels.each do |l| %>
+        <div class="col-md-3">
+          <img class="img-responsive center-block" src="<%= l.photo_url %>" style="display:inline;position:relative">
+          <div><input type="radio" name="box1" value="male" cheked ><p id="radioText"><%= l.name %></p>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="col-md-3">
+        <img class="img-responsive center-block" src="/assets/labels/FTkeepcalmborder.png" style="   display:inline;position:relative">      
+        <div> <input type="radio" name="box1" value="male"  ><p id="radioText">POUCH - WHITE </p>
+      </div></div>
+  
+      <div class="col-md-3">
+        <img class="img-responsive center-block" src="/assets/labels/Sorryborder.png" style="   display:inline;position:relative">
+          <div><input type="radio" name="box1" value="male" ><p id="radioText">POUCH - MATTE BLACK</p>
+      </div></div>
+  
+      
+      </form>
+  </div><br><br>
+  <a href="/pages/step5"><img id="image1" class="img-responsive" style="position:relative;left:74px;width:115px" src="/assets/buttons/select-btn.png">
+   </a>
+<br><br>
+
+
+
+    <%#= button_to "REORDER", '/orders/new', {:class => "buttonTo"} %>
+
+
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <!--<script src="js/bootstrap.js"></script>-->
+<script type="text/javascript" src="/assets/jquery.screwdefaultbuttonsV2.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script>
+alert("hi");
+    $('input:radio').screwDefaultButtons({
+        image: 'url("/assets/radio/new2.png")',
+        width: 19,
+        height: 19
+    });
+</script>      

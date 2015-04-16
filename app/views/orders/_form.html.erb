@@ -1,0 +1,80 @@
+
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :user_id %>
+  </div>
+  <div>
+    <%= f.label :serving_style_id %><br>
+        <%= f.collection_select(:serving_style_id, ServingStyle.all, :id, :name ) %>
+    
+       <!--This was code for drop-down
+       <fieldset>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Serving Style:</label>
+        <div class="col-sm-3">
+            <select class="form-control">
+                <#% @serving_styles.each do |serving_style| %>
+                  <option value=<#% serving_style.id %>><#%= serving_style.name %> - <#%= serving_style.description %></option>
+                <#% end %>
+            </select>
+        </div>
+      </div>
+    </fieldset>
+    
+
+   <div class="dropdown">
+      <div class="dropdown-toggle" data-toggle="dropdown"><#%= f.label :serving_style_id %><b class="caret"></b></div>
+      <ul class="dropdown-menu">
+      
+    
+      </ul>
+  </div>-->
+  </div>
+  <div class="field">
+    <%= f.label :tea_base_id %><br>
+    <%= f.collection_select(:tea_base_id, @tea_bases, :id, :name ) %>
+  </div>
+  <div class="field">
+    <%= f.label :flavour_id %><br>
+    <%= f.collection_select(:serving_style_id, ServingStyle.all, :id, :name ) %>
+  </div>
+  <div class="field">
+    <%= f.label :second_flavour_id %><br>
+    <%= f.collection_select(:serving_style_id, ServingStyle.all, :id, :name ) %>
+  </div>
+  <div class="field">
+    <%= f.label :packaging_id %><br>
+    <%= f.collection_select(:serving_style_id, ServingStyle.all, :id, :name ) %>
+  </div>
+  <div class="field">
+    <%= f.label :label_id %><br>
+    <%= f.collection_select(:serving_style_id, ServingStyle.all, :id, :name ) %>
+  </div>
+  <div class="field">
+    <%= f.label :blend_name %><br>
+    <%= f.collection_select(:serving_style_id, ServingStyle.all, :id, :name ) %>
+  </div>
+  <div class="field">
+    <%= f.label :message %><br>
+    <%= f.text_area :message %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

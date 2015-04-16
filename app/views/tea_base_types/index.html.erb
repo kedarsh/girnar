@@ -1,0 +1,31 @@
+<h1>Listing tea_base_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Tea base</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tea_base_types.each do |tea_base_type| %>
+      <tr>
+        <td><%= tea_base_type.name %></td>
+        <td><%= tea_base_type.description %></td>
+        <td><%= tea_base_type.price %></td>
+        <td><%= tea_base_type.tea_base %></td>
+        <td><%= link_to 'Show', tea_base_type %></td>
+        <td><%= link_to 'Edit', edit_tea_base_type_path(tea_base_type) %></td>
+        <td><%= link_to 'Destroy', tea_base_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tea base type', new_tea_base_type_path %>

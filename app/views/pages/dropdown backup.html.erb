@@ -1,0 +1,85 @@
+<!-- This is the two dropdown which were implementing and working a=but second dropdow was not displaying the selected option
+    <div class="dropdown" id="ddc" style="position: relative;left: 78px;top:36px">
+        <button class="btn btn-default dropdown-toggle modifiedversionstep2" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">  
+            SELECT SERVING STYLE
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <% @serving_styles.each do |ss| %>
+                <li role="presentation" style="min-width: 240px" class="serving_styles_observer" value="<%= ss.id %>"><a role="menuitem" tabindex="-1" href="javascript:return false;"><%= ss.name %></a></li>
+            <% end %>
+        </ul>
+    </div>
+        
+    <div class="dropdown" id="ddc" style="position: relative;left: 78px;top:36px">
+        <button class="btn btn-default dropdown-toggle modifiedversionstep2" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">  
+            SELECT BASE
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" id="tea_bases_ul">
+        </ul>
+    </div>  
+-->
+
+<!-- JS for above is
+      <script>
+        $(document).ready(function() {
+          $('.serving_styles_observer').click(function() {
+             alert($(this).val());
+            $.ajax({
+              url: "<%= update_tea_bases_path %>",
+              data: {
+                serving_style_id : $(this).val()
+              },
+              dataType: "script"
+            });
+          });
+        });
+      </script>
+-->
+
+
+
+<!-- This is the dropdown w/o proper js
+  
+  <div class="btn-group" id="ddc"  style="position: relative;left: 78px;top:10px">
+    <button class="btn btn-default dropdown-toggle modifiedversionstep1" name="sss" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    SELECT SERVING STYLE
+<span class="caret downarrow"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+      <% @serving_styles.each do |s| %>
+        <li role="presentation" style="min-width: 240px" class="track_change"><a role="menuitem" tabindex="-1" href="javascript:return false;"><%= s.name %></a></li>
+      <% end %>
+    </ul>
+  </div>
+  -->
+  
+  
+  
+  
+  
+ <!--STEP 2 FLAVOUR 
+  
+  
+    <div class="dropdown" id="ddc" style="position: relative;left: 78px;top:10px">
+        <button class="btn btn-default dropdown-toggle modifiedversionstep2" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+        SELECT FLAVOUR 1
+   <!-- <span class="caret downarrow"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <% @flavours.each do |f| %>
+        <li role="presentation" style="min-width: 240px"><a role="menuitem" tabindex="-1" href="#"><%= f.name %></a></li>
+        <% end %>
+        </ul>
+    </div>
+<div class="dropdown" id="ddc" style="position: relative;left: 78px;top:36px">
+    <button class="btn btn-default dropdown-toggle modifiedversionstep2" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">  
+    SELECT FLAVOUR 2
+    <!-- <span class="caret downarrow"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <% @flavours.each do |f| %>
+    <li role="presentation" style="min-width: 240px"><a role="menuitem" tabindex="-1" href="#"><%= f.name %></a></li>
+    <% end %>
+    </ul>
+</div>
+-->

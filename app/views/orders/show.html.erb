@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user %>
+</p>
+
+<p>
+  <strong>Serving style:</strong>
+  <%= @order.serving_style.name %>
+</p>
+
+<p>
+  <strong>Base:</strong>
+  <%= @order.tea_base %>
+</p>
+
+<p>
+  <strong>Flavour:</strong>
+  <%= @order.flavour %>
+</p>
+
+<p>
+  <strong>Second Flavour:</strong>
+  <%= @order.second_flavour %>
+</p>
+
+
+<p>
+  <strong>Packaging:</strong>
+  <%= @order.packaging %>
+</p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @order.label %>
+</p>
+
+<p>
+  <strong>Blend name:</strong>
+  <%= @order.blend_name %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @order.message %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

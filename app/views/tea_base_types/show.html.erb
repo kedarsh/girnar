@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tea_base_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tea_base_type.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @tea_base_type.price %>
+</p>
+
+<p>
+  <strong>Tea base:</strong>
+  <%= @tea_base_type.tea_base %>
+</p>
+
+<%= link_to 'Edit', edit_tea_base_type_path(@tea_base_type) %> |
+<%= link_to 'Back', tea_base_types_path %>

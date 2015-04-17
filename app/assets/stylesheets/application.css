@@ -356,7 +356,7 @@ color: white;
 font-size: 11px;
 bottom: 24px;
 clear: both;
-left: 102px;
+left: 132px;
 /* background-color:transparent;
     background-image: url("/assets/step1description.png");*/
 }
@@ -1346,7 +1346,7 @@ display:none;
 .step_content{
   width: 100%;
   clear: both;
-  overflow: hidden;
+  /*overflow: hidden;*/
   margin-bottom:30px;
   margin-top:50px;
 }
@@ -1433,3 +1433,9 @@ display:none;
    border-width: 5px; 
   border-image-width: 15px;
     }
+#tea_base_types{
+  margin-left:105px;
+  font-family:'Signika Semibold';
+  font-size:11px;
+  margin-bottom:30px;
+}

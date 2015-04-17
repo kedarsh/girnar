@@ -21,6 +21,11 @@ function dynamic_event(tea_id,textvalue,buttonid){
       });
 }
 
+function set_dropbox_text(textvalue,buttonid){
+     $("#"+buttonid).text(textvalue);
+}
+ 
+
 
 
 

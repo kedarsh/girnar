@@ -32,7 +32,7 @@
         <span class="caret downarrow"></span>
         <ul class="dropdown-menu tobeaddedtoul2" role="menu" aria-labelledby="dropdownMenu1">
             <% @flavours.each do |f| %>
-                <li id="testli2" role="presentation" class="flavours_observer" value="<%= f.id %>"><a role="menuitem" tabindex="-1" href="javascript:return false;"><%= f.name %></a></li>
+                <li id="testli2" role="presentation" class="flavours_observer" value="<%= f.id %>"><a role="menuitem" tabindex="-1" href="javascript:void(0);"><%= f.name %></a></li>
             <% end %>
         </ul>
     </div>
@@ -41,7 +41,7 @@
     
     
     <div class="dropdown tobeaddedtodropdown2"  style="position: relative;left: 78px;top:36px;  margin-bottom: 50px">
-        <button class="btn btn-default dropdown-toggle tobeaddedtobutton2" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">  
+        <button class="btn btn-default dropdown-toggle tobeaddedtobutton2" type="button" id="flavour_two" data-toggle="dropdown" aria-expanded="true">  
             SELECT FLAVOUR 2
 
         </button>
@@ -125,7 +125,7 @@
 <script>
   $(document).ready(function() {
     $('.flavours_observer').click(function() {
-       alert($(this).val());
+        
       $.ajax({
         url: "<%= update_flavours_path %>",
         data: {
@@ -136,12 +136,5 @@
     });
   });
   
-  $(function() {
-  alert("testwala");
-        $('#dropdownMenu1').change(function(){  alert("testwala");
-
-            $('.dropdownclasstest').hide();
-            $('#' + $(this).val()).show();
-        });
-    });
+ 
 </script>

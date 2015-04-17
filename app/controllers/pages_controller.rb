@@ -66,4 +66,11 @@ class PagesController < ApplicationController
   def step5
   end
   
+  def update_flavours
+    @related_flavours = Flavour.find(params[:flavour_id]).flavours
+    
+  end
+  
+  
+  
 end

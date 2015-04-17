@@ -69,13 +69,13 @@
         <span class="caret downarrow"></span>
         <ul class="dropdown-menu tobeaddedtoul" role="menu" aria-labelledby="dropdownMenu1">
             <% @serving_styles.each do |ss| %>
-                <li role="presentation" class="serving_styles_observer testli" value="<%= ss.id %>"><a role="menuitem" tabindex="-1" href="javascript:void(0);"><%= ss.name %></a></li>
+          <li onclick="set_dropbox_text('<%= ss.name %>','dropdownMenu1')" role="presentation" class="serving_styles_observer testli" value="<%= ss.id %>"><a role="menuitem" tabindex="-1" href="javascript:void(0);"><%= ss.name %></a></li>
             <% end %>
         </ul>
     </div>
         
  
-    <div class="dropdown tobeaddedtodropdown"  style="position: relative;left: 78px;top:36px">
+    <div class="dropdown tobeaddedtodropdown"  style="position: relative;left: 105;margin-bottom:10px">
         <button id="base_type_button" class="btn btn-default dropdown-toggle tobeaddedtobutton" type="button"  data-toggle="dropdown" aria-expanded="true">  
  
 
@@ -86,7 +86,6 @@
     </div>  
 
  
-<br/><br/>
 
 <div id="tea_base_types">
   
@@ -163,7 +162,7 @@
 
 
 
-
+</div>
 
 
 
